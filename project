@@ -1,0 +1,35 @@
+Framework - MVC using PDO mysql
+Singleton Design pattern
+
+DB- Mysql
+--------------------
+DB name- Author
+Tables
+Author_detail
+CREATE TABLE Author_detail (
+id INT(11) not null AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+password VARCHAR(25),
+mobile INT(12),
+reg_date TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE story_detail (
+story_id INT(11) not null AUTO_INCREMENT PRIMARY KEY,
+author_id INT(11) not null,
+title varchar(50) not null,
+story text NOT NULL,
+status INT(1),
+flag INT(1),
+creation_date TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+INSERT INTO Author_detail (firstname,lastname,email,password,mobile) values ('test','test123','test@gmail.com','123456','919999999999');
+
+INSERT INTO story_detail (author_id,title,story,status,flag) values (1,'Laravel','Laravel is a Symfony based free open-source PHP web framework. It is created by Taylor Otwell and allows developers to write expressive, elegant syntax. Laravel comes with built-in support for user authentication and authorization which is missing in some most popular PHP frameworks like CodeIgniter, CakePHP.Here you will find Latest Laravel interview questions and answer that helps you crack Laravel Interviews.',1,1);
+
+INSERT INTO story_detail (author_id,story,status,flag) values (1,'testing by admin',1,1);
